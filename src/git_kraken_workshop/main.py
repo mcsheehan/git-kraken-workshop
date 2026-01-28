@@ -5,6 +5,9 @@ app = FastAPI()
 
 @app.get("/richard/{subordinate}")
 async def get_richard(subordinate: str):
+    if subordinate == "faheem":
+        return {"message": "failed probation"}
+
     return {"message": f"Hello {subordinate}"}
 
 @app.get("/")
