@@ -3,6 +3,10 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
+@app.get("/max/{factory}")
+async def get_richard(subordinate: str):
+    return {"message": f"Hello {subordinate}"}
+
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
