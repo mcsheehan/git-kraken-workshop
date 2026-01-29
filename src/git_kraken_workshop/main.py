@@ -2,11 +2,15 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+@app.get("/gillespie")
+async def get_richard(subordinate: str):
+    return {"message": f"wants features"}
+
 
 @app.get("/richard/{subordinate}")
 async def get_richard(subordinate: str):
     if subordinate == "faheem":
-        return {"message": "failed probation"}
+        return {"message": "passed probation"}
 
     return {"message": f"Hello {subordinate}"}
 
